@@ -60,6 +60,10 @@ public class PostBox extends Box {
         return result;
     }
 
+    public void showPostBoxInfo(){
+        System.out.println(toString());
+    }
+
     @Override
     public String toString() {
         return "PostBox{" +

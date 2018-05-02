@@ -56,6 +56,10 @@ public class Box {
         return result;
     }
 
+    public void showBoxInfo(){
+        System.out.println(toString());
+    }
+
     @Override
     public String toString() {
         return "Box{" +

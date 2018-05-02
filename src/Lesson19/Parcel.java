@@ -58,6 +58,10 @@ public class Parcel extends PostBox{
         return result;
     }
 
+    public void showParcelInfo(){
+        System.out.println(toString());
+    }
+
     @Override
     public String toString() {
         return "Parcel{" +
