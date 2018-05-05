@@ -15,7 +15,7 @@ public class Lesson19runner {
 
 
         StuffControl.showBoxInfo(boxStuff);
-        StuffControl.showPostBoxInfo(boxStuff);
+        //StuffControl.showPostBoxInfo(boxStuff);
 
 
 

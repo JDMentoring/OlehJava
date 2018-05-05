@@ -1,7 +1,5 @@
 package homework_14;
 
-import sun.plugin.dom.core.Element;
-
 public class Queue implements IQueue {
     Node head;
 

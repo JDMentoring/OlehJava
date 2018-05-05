@@ -1,7 +1,5 @@
 package homeWork8;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-import sun.plugin2.liveconnect.JSExceptions;
 
 import java.io.File;
 import java.io.FileWriter;
