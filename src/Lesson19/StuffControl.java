@@ -1,7 +1,10 @@
 package Lesson19;
 
 public class StuffControl {
-    static void showBoxInfo(Stuff<?> someArgs){
+
+
+
+    static void showBoxInfo(Stuff<? extends Box> someArgs){
         for (int i = 0; i <someArgs.stuff.size() ; i++) {
             someArgs.stuff.get(i).showBoxInfo();
         }
@@ -18,4 +21,6 @@ public class StuffControl {
             someArgs.stuff.get(i).showParcelInfo();
         }
     }
+
+
 }
