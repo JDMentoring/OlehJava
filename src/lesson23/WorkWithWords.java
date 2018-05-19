@@ -2,54 +2,73 @@ package lesson23;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.TreeSet;
 
 public class WorkWithWords {
     public static void main(String[] args) {
+        Set<String> treeSet = new TreeSet<>();
         String path = "Games.txt";
-        String[] words = symbolFilter(readFile(path)).split(" ");
-        TreeSet<String> treeSet = arrToTreeSet(words);
+        readFile(path,treeSet);
+
+        ((TreeSet<String>) treeSet).first(); // Sorted => last
+        ((TreeSet<String>) treeSet).higher("some");
+        String someV = ((TreeSet<String>) treeSet).ceiling("some");
+        ((TreeSet<String>) treeSet).pollFirst();
+        ((TreeSet<String>) treeSet).descendingIterator();
+
+
         getCountOfUniqueWords(treeSet);
     }
 
-    public static String readFile(String path) {
-        StringBuilder stringBuilder = new StringBuilder();
-
+    public static void readFile(String path, Set<String> someSet) {
         try {
             Scanner scn = new Scanner(new File(path));
             while (scn.hasNext()) {
-                stringBuilder.append(scn.nextLine());
-
+                String buffer[] = scn.nextLine().split(" ");
+                for (int i = 0; i < buffer.length; i++) {
+                    someSet.add(symbolFilter(buffer[i]));
+                }
             }
-            return stringBuilder.toString();
         } catch (FileNotFoundException e) {
-            return null;
+            System.out.println(e.getMessage());
         }
     }
 
     public static String symbolFilter(String s) {
         String r = "";
+        char someSymbol = 'A';
+        char someSymbol2 = 65;
         for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) != ',' &&
-                    s.charAt(i) != '.' &&
-                    s.charAt(i) != '?' &&
-                    s.charAt(i) != '!' &&
-                    s.charAt(i) != '-') r += s.charAt(i);
+            if(s.charAt(i)>=33 && s.charAt(i)<=64){
+                continue;
+            }else{
+                r += s.charAt(i);
+            }
+
+//
+//            if (s.charAt(i) == ',' ||
+//                    s.charAt(i) == '.' ||
+//                    s.charAt(i) == '?' ||
+//                    s.charAt(i) == '!' ||
+//                    s.charAt(i) == '-') {
+//                continue;
+//            } else {
+//
+//            }
         }
         return r;
     }
 
-    public static TreeSet<String> arrToTreeSet(String[] strArr){
-        TreeSet<String> temp = new TreeSet<>();
-        for(int i = 0;i<strArr.length;i++){
-            temp.add(strArr[i]);
-        }
-        return  temp;
-    }
 
-    public static void getCountOfUniqueWords(TreeSet<String> treeSet){
-        System.out.println("This text contains "+treeSet.size()+" unique words.");
+    public static void getCountOfUniqueWords(Set<String> treeSet) {
+        for (String item :treeSet){
+            System.out.println(item);
+        }
+
+        System.out.println("This text contains " + treeSet.size() + " unique words.");
     }
 
 
