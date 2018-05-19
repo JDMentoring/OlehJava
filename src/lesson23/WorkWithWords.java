@@ -7,7 +7,7 @@ import java.util.TreeSet;
 
 public class WorkWithWords {
     public static void main(String[] args) {
-        String path = "LorenIpsum.txt";
+        String path = "Games.txt";
         String[] words = symbolFilter(readFile(path)).split(" ");
         TreeSet<String> treeSet = arrToTreeSet(words);
         getCountOfUniqueWords(treeSet);
