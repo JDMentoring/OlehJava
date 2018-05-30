@@ -1,5 +1,7 @@
 package HomeWork18;
 
+import java.sql.SQLOutput;
+
 public class Timer {
     static long startTime;
     static long stopTime;
@@ -11,8 +13,9 @@ public class Timer {
 
     public static long stop() {
         stopTime = System.currentTimeMillis();
-        duration =stopTime - startTime;
-        return duration;
+        duration = stopTime - startTime;
+        System.out.println(duration);
+        return  duration;
     }
 
 }
