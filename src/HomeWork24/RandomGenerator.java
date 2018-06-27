@@ -21,6 +21,8 @@ public class RandomGenerator {
 
     public static String createNewCardNumber() {
         String cardNum = "";
+        StringBuilder someString = new StringBuilder();
+        someString.append(6);
         int ch = 0;
         for (int i = 0; i < 16; i++) {
             try {

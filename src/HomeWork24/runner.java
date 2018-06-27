@@ -8,11 +8,11 @@ import java.util.TreeSet;
 public class runner {
     public static void main(String[] args) {
         Timer.start();
-        AccountManager.fillAccounts();
+        AccountManager.fillAccounts(100000);
         Timer.stop();
         System.out.println("Total accounts :" + AccountManager.getAccounts().size());
-        System.out.println(((TreeSet<Account>)AccountManager.getAccounts()).first().toString());
-        System.out.println(AccountManager.getAccount(0).toString());
-
+//        System.out.println(((TreeSet<Account>)AccountManager.getAccounts()).first().toString());
+//        System.out.println(AccountManager.getAccount(0).toString());
+        AccountManager.show();
     }
 }

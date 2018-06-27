@@ -7,7 +7,7 @@ import java.util.TreeSet;
 
 public class AccountManager {
     private static int nextId = 0;
-    private static TreeSet<Account> accounts = new TreeSet<Account>();
+    private static Set<Account> accounts = new TreeSet<Account>();
 
 
     public static int getId() {
@@ -16,8 +16,8 @@ public class AccountManager {
         return id;
     }
 
-    public static void fillAccounts() {
-        while (accounts.size() < 100000) {
+    public static void fillAccounts(int amount) {
+        while (accounts.size() < amount) {
             Account a = new Account();
             accounts.add(a);
         }
@@ -46,4 +46,12 @@ public class AccountManager {
     public static void setAccounts(Set accounts) {
         accounts = accounts;
     }
+
+
+    public static void show() {
+        for (Account item:accounts){
+            System.out.println(item);
+        }
+    }
+
 }
